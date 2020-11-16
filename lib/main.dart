@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Screens/slide_Intro.dart';
+import 'Screens/Home.dart';
 
 void main() {
-  runApp(MaterialApp(home: slide_Intro(), title: "Tour Guid"));
+  runApp(MaterialApp(home: Home(), title: "Tour Guid"));
 }

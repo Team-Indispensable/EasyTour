@@ -17,28 +17,12 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    String apptitle;
-    switch (_page) {
-      case 0:
-        apptitle = "Tourism Site Navigator";
-        break;
-      case 1:
-        apptitle = "Booking";
-        break;
-      case 2:
-        apptitle = "Currency Converter";
-        break;
-      case 3:
-        apptitle = "Local Language Converter";
-        break;
-      case 4:
-        apptitle ="World Clock Time Converter";
-    }
-    return Scaffold(
 
-      appBar: AppBar(title: Text("$apptitle", style: TextStyle(fontWeight: FontWeight.bold),),
-      backgroundColor: Colors.blue,
-      ),
+    return Scaffold(
+         appBar: customAppBar(),
+//      appBar: AppBar(title: Text("$apptitle", style: TextStyle(fontWeight: FontWeight.bold),),
+//      backgroundColor: Colors.blue,
+//      ),
         bottomNavigationBar: CurvedNavigationBar(
           index: 0,
           height: 50.0,
@@ -49,9 +33,10 @@ class _HomeState extends State<Home> {
             Icon(Icons.language, size: 30),
             Icon(Icons.access_time, size: 30),
           ],
-          color: Colors.white,
+
+          color: Colors.lightBlue,
           buttonBackgroundColor: Colors.white,
-          backgroundColor: Colors.blueAccent,
+          backgroundColor: Colors.white,
           animationCurve: Curves.easeInOutCirc,
           animationDuration: Duration(milliseconds: 600),
           onTap: (index) {
@@ -80,8 +65,41 @@ class _HomeState extends State<Home> {
       case 4:
         return timeConverter();
     }
+       
 
 
+  }
 
+ Widget customAppBar() {
+   String apptitle;
+   switch (_page) {
+     case 0:
+       apptitle = "Tourism Site Navigator";
+       return null;
+       break;
+     case 1:
+       apptitle = "Booking";
+       return AppBar(title: Text("$apptitle", style: TextStyle(fontWeight: FontWeight.bold),),
+         backgroundColor: Colors.blue,
+       );
+       break;
+     case 2:
+       apptitle = "Currency Converter";
+       return AppBar(title: Text("$apptitle", style: TextStyle(fontWeight: FontWeight.bold),),
+         backgroundColor: Colors.blue,
+       );
+       break;
+     case 3:
+       apptitle = "Local Language Converter";
+       return AppBar(title: Text("$apptitle", style: TextStyle(fontWeight: FontWeight.bold),),
+         backgroundColor: Colors.blue,
+       );
+       break;
+     case 4:
+       apptitle ="World Clock Time Converter";
+       return AppBar(title: Text("$apptitle", style: TextStyle(fontWeight: FontWeight.bold),),
+         backgroundColor: Colors.blue,
+       );
+   }
   }
 }
